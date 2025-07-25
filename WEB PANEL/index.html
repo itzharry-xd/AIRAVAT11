@@ -1,27 +1,88 @@
-<!-- LOGIN PAGE -->
-<div id="loginPage" class="flex items-center justify-center min-h-screen bg-gray-900">
-  <div class="w-full max-w-md p-8 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700">
-    <div class="flex justify-center mb-6">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/MrBeast_Logo.png" alt="Logo" class="w-20">
-    </div>
-    <h2 class="text-4xl font-extrabold text-center mb-6 glow">Welcome Back!</h2>
-    <form id="loginForm">
-      <input type="email" placeholder="you@example.com" class="w-full p-3 mb-4 rounded-lg bg-gray-700 text-white">
-      <input type="password" placeholder="••••••••" class="w-full p-3 mb-6 rounded-lg bg-gray-700 text-white">
-      <button type="submit" class="w-full p-3 rounded-lg text-black font-bold bg-cyan-400 hover:bg-cyan-500">Login</button>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coming Soon - AIRAVAT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at center, #000428, #004e92);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+    }
+
+    /* Glowing animated text */
+    h1 {
+      font-size: 5em;
+      text-align: center;
+      position: relative;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff;
+      animation: glow 2s infinite alternate;
+      z-index: 2;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff; }
+      100% { text-shadow: 0 0 20px #00ffe5, 0 0 50px #00ffe5, 0 0 80px #00ffe5; }
+    }
+
+    /* Animated bubbles */
+    .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+    @keyframes rise {
+      0% {transform: translateY(0) scale(1);}
+      100% {transform: translateY(-1200px) scale(1.5);}
+    }
+
+    /* Subtitle */
+    p {
+      font-size: 1.5em;
+      color: #ccc;
+      margin-top: 10px;
+      z-index: 2;
+      text-shadow: 0 0 10px #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="bubbles">
+    <!-- Generate bubbles -->
+    <script>
+      for(let i=0; i<40; i++) {
+        const bubble = document.createElement("div");
+        const size = Math.random()*60 + 20;
+        bubble.classList.add("bubble");
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${Math.random()*100}%`;
+        bubble.style.animationDuration = `${10 + Math.random()*15}s`;
+        bubble.style.opacity = Math.random();
+        document.querySelector(".bubbles").appendChild(bubble);
+      }
+    </script>
   </div>
-</div>
 
-<!-- YOUR AIRAVAT SCRIPT -->
-<div id="panel" style="display:none;">
-  <!-- Paste your entire AIRAVAT HTML here -->
-</div>
-
-<script>
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("panel").style.display = "block";
-  });
-</script>
+  <h1>COMING SOON</h1>
+  <p>Something Big is On the Way!</p>
+</body>
+</html>
