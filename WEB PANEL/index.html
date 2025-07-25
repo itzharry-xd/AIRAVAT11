@@ -1,82 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MrBeast Style Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(270deg, #0a0a0a, #101010, #0a0a0a);
-      background-size: 600% 600%;
-      animation: gradientShift 15s ease infinite;
-    }
-    @keyframes gradientShift {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    .beast-btn {
-      background: linear-gradient(90deg, #00f7ff, #00ff94);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-      transition: all 0.3s ease;
-    }
-    .beast-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
-    }
-    .glow {
-      color: #00f7ff;
-      text-shadow: 0 0 15px #00f7ff, 0 0 30px #00ff94;
-    }
-    .link-glow {
-      color: #00f7ff;
-      text-shadow: 0 0 5px #00f7ff, 0 0 15px #00ff94;
-      transition: all 0.3s ease;
-    }
-    .link-glow:hover {
-      text-shadow: 0 0 15px #00f7ff, 0 0 40px #00ff94;
-    }
-    .card {
-      animation: slideIn 1s ease-out;
-    }
-    @keyframes slideIn {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    input:focus {
-      box-shadow: 0 0 15px #00f7ff;
-    }
-  </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-md p-8 bg-gray-900 rounded-2xl shadow-2xl border border-gray-800 card">
-    <!-- Logo -->
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="flex items-center justify-center min-h-screen bg-gray-900">
+  <div class="w-full max-w-md p-8 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700">
     <div class="flex justify-center mb-6">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/MrBeast_Logo.png" alt="Logo" class="w-20 drop-shadow-lg">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/MrBeast_Logo.png" alt="Logo" class="w-20">
     </div>
     <h2 class="text-4xl font-extrabold text-center mb-6 glow">Welcome Back!</h2>
     <form id="loginForm">
-      <div class="mb-4">
-        <label class="block text-gray-300 mb-2">Email</label>
-        <input type="email" placeholder="you@example.com" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500">
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-300 mb-2">Password</label>
-        <input type="password" placeholder="••••••••" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500">
-      </div>
-      <button type="submit" class="w-full p-3 rounded-lg text-black font-bold beast-btn">Login</button>
+      <input type="email" placeholder="you@example.com" class="w-full p-3 mb-4 rounded-lg bg-gray-700 text-white">
+      <input type="password" placeholder="••••••••" class="w-full p-3 mb-6 rounded-lg bg-gray-700 text-white">
+      <button type="submit" class="w-full p-3 rounded-lg text-black font-bold bg-cyan-400 hover:bg-cyan-500">Login</button>
     </form>
-    <p class="text-center text-gray-400 mt-4">Don't have an account? <a href="#" class="link-glow">Sign Up</a></p>
   </div>
+</div>
 
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      // Fake login then redirect
-      window.location.href = "airavat.html";  // Replace with the actual filename of your big AIRAVAT script
-    });
-  </script>
-</body>
-</html>
+<!-- YOUR AIRAVAT SCRIPT -->
+<div id="panel" style="display:none;">
+  <!-- Paste your entire AIRAVAT HTML here -->
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("panel").style.display = "block";
+  });
+</script>
