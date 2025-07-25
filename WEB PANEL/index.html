@@ -7,8 +7,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #0a0a0a, #101010, #0a0a0a);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
     .beast-btn {
       background: linear-gradient(90deg, #00f7ff, #00ff94);
@@ -17,16 +24,39 @@
     }
     .beast-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
     }
     .glow {
-      text-shadow: 0 0 15px #00f7ff;
+      color: #00f7ff;
+      text-shadow: 0 0 15px #00f7ff, 0 0 30px #00ff94;
+    }
+    .link-glow {
+      color: #00f7ff;
+      text-shadow: 0 0 5px #00f7ff, 0 0 15px #00ff94;
+      transition: all 0.3s ease;
+    }
+    .link-glow:hover {
+      text-shadow: 0 0 15px #00f7ff, 0 0 40px #00ff94;
+    }
+    .card {
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    input:focus {
+      box-shadow: 0 0 15px #00f7ff;
     }
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-md p-8 bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
-    <h2 class="text-3xl font-bold text-center text-white mb-6 glow">Welcome Back!</h2>
+  <div class="w-full max-w-md p-8 bg-gray-900 rounded-2xl shadow-2xl border border-gray-800 card">
+    <!-- Logo -->
+    <div class="flex justify-center mb-6">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/MrBeast_Logo.png" alt="Logo" class="w-20 drop-shadow-lg">
+    </div>
+    <h2 class="text-4xl font-extrabold text-center mb-6 glow">Welcome Back!</h2>
     <form>
       <div class="mb-4">
         <label class="block text-gray-300 mb-2">Email</label>
@@ -38,7 +68,7 @@
       </div>
       <button type="submit" class="w-full p-3 rounded-lg text-black font-bold beast-btn">Login</button>
     </form>
-    <p class="text-center text-gray-400 mt-4">Don't have an account? <a href="#" class="text-cyan-400 hover:underline">Sign Up</a></p>
+    <p class="text-center text-gray-400 mt-4">Don't have an account? <a href="#" class="link-glow">Sign Up</a></p>
   </div>
 </body>
 </html>
