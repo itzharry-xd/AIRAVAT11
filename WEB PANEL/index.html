@@ -5,83 +5,63 @@
   <title>Coming Soon - AIRAVAT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    * {margin:0;padding:0;box-sizing:border-box;}
     body {
       height: 100vh;
-      background: radial-gradient(circle at center, #000428, #004e92);
+      background: #000;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      color: #fff;
+      font-family: 'Courier New', monospace;
     }
 
-    /* Glowing animated text */
+    /* Anime style animated background */
+    @keyframes bgMove {
+      0% {background-position: 0 0;}
+      100% {background-position: 400% 400%;}
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: linear-gradient(45deg, #0ff, #004e92, #ff00ff, #0ff);
+      background-size: 400% 400%;
+      animation: bgMove 15s infinite alternate ease-in-out;
+      z-index:0;
+      filter: blur(60px);
+    }
+
+    /* Glowing Anime-style text */
     h1 {
       font-size: 5em;
-      text-align: center;
-      position: relative;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff;
+      z-index: 1;
+      color: #00fff7;
+      text-shadow: 
+        0 0 5px #00fff7, 
+        0 0 15px #00fff7, 
+        0 0 30px #00eaff, 
+        0 0 60px #00eaff;
       animation: glow 2s infinite alternate;
-      z-index: 2;
     }
     @keyframes glow {
-      0% { text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff; }
-      100% { text-shadow: 0 0 20px #00ffe5, 0 0 50px #00ffe5, 0 0 80px #00ffe5; }
-    }
-
-    /* Animated bubbles */
-    .bubbles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-    }
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      animation: rise 20s infinite ease-in;
-    }
-    @keyframes rise {
-      0% {transform: translateY(0) scale(1);}
-      100% {transform: translateY(-1200px) scale(1.5);}
+      0% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00eaff, 0 0 60px #00eaff; }
+      100% { text-shadow: 0 0 20px #00ffff, 0 0 50px #00fff7, 0 0 80px #00fff7; }
     }
 
     /* Subtitle */
     p {
-      font-size: 1.5em;
-      color: #ccc;
-      margin-top: 10px;
-      z-index: 2;
+      font-size: 1.3em;
+      color: #e0f7ff;
+      margin-top: 15px;
+      z-index: 1;
       text-shadow: 0 0 10px #000;
     }
   </style>
 </head>
 <body>
-  <div class="bubbles">
-    <!-- Generate bubbles -->
-    <script>
-      for(let i=0; i<40; i++) {
-        const bubble = document.createElement("div");
-        const size = Math.random()*60 + 20;
-        bubble.classList.add("bubble");
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${Math.random()*100}%`;
-        bubble.style.animationDuration = `${10 + Math.random()*15}s`;
-        bubble.style.opacity = Math.random();
-        document.querySelector(".bubbles").appendChild(bubble);
-      }
-    </script>
-  </div>
-
   <h1>COMING SOON</h1>
   <p>Something Big is On the Way!</p>
 </body>
