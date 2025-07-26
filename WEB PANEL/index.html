@@ -4,52 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnlyYou - Fan Platform</title>
-    <style>
-        body {margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:white;}
-        header {display:flex; justify-content:space-between; align-items:center; padding:20px; background:#111;}
-        header h1 {color:#00afff;}
-        nav a {color:white; text-decoration:none; margin:0 15px; font-weight:bold;}
-        .hero {text-align:center; padding:100px 20px; background:linear-gradient(to bottom, #0d0d0d, #111);}
-        .hero h2 {font-size:48px; color:#00afff;}
-        .hero p {font-size:20px; margin-top:10px; color:#ccc;}
-        .btn {background:#00afff; padding:12px 25px; border:none; border-radius:25px; font-size:18px; color:white; cursor:pointer;}
-        .creators {display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:20px; padding:40px;}
-        .creator {background:#1a1a1a; border-radius:10px; overflow:hidden; text-align:center;}
-        .creator img {width:100%; height:250px; object-fit:cover;}
-        .creator h3 {padding:10px;}
-        footer {text-align:center; padding:30px; background:#111; color:#777;}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
-    <h1>OnlyYou</h1>
+    <div class="logo">Only<span>You</span></div>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Explore</a>
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="#" id="loginBtn">Login</a>
+        <a href="#" id="signupBtn" class="btn">Sign Up</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Connect with Your Favorite Creators</h2>
-    <p>Subscribe and enjoy exclusive content</p>
+    <h1>Connect with Your Favorite Creators</h1>
+    <p>Exclusive content, direct interaction, and more.</p>
     <button class="btn">Join Now</button>
 </section>
 
-<section class="creators">
-    <div class="creator">
-        <img src="https://via.placeholder.com/400x250" alt="Creator">
-        <h3>Jane Doe</h3>
+<section class="features">
+    <div class="feature">
+        <h3>Exclusive Access</h3>
+        <p>Get behind-the-scenes content from top creators.</p>
     </div>
-    <div class="creator">
-        <img src="https://via.placeholder.com/400x250" alt="Creator">
-        <h3>John Smith</h3>
+    <div class="feature">
+        <h3>Direct Messaging</h3>
+        <p>Chat directly with your favorite stars.</p>
     </div>
-    <div class="creator">
-        <img src="https://via.placeholder.com/400x250" alt="Creator">
-        <h3>Alice Brown</h3>
+    <div class="feature">
+        <h3>Support Creators</h3>
+        <p>Help creators grow by subscribing to their content.</p>
     </div>
 </section>
 
@@ -57,5 +42,28 @@
     <p>&copy; 2025 OnlyYou. All Rights Reserved.</p>
 </footer>
 
+<!-- Modals -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="btn">Login</button>
+    </div>
+</div>
+
+<div class="modal" id="signupModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="btn">Sign Up</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
