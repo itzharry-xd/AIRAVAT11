@@ -1,68 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Coming Soon - AIRAVAT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {margin:0;padding:0;box-sizing:border-box;}
-    body {
-      height: 100vh;
-      background: #000;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: 'Courier New', monospace;
-    }
-
-    /* Anime style animated background */
-    @keyframes bgMove {
-      0% {background-position: 0 0;}
-      100% {background-position: 400% 400%;}
-    }
-    body::before {
-      content: "";
-      position: absolute;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: linear-gradient(45deg, #0ff, #004e92, #ff00ff, #0ff);
-      background-size: 400% 400%;
-      animation: bgMove 15s infinite alternate ease-in-out;
-      z-index:0;
-      filter: blur(60px);
-    }
-
-    /* Glowing Anime-style text */
-    h1 {
-      font-size: 5em;
-      z-index: 1;
-      color: #00fff7;
-      text-shadow: 
-        0 0 5px #00fff7, 
-        0 0 15px #00fff7, 
-        0 0 30px #00eaff, 
-        0 0 60px #00eaff;
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      0% { text-shadow: 0 0 10px #00fff7, 0 0 30px #00eaff, 0 0 60px #00eaff; }
-      100% { text-shadow: 0 0 20px #00ffff, 0 0 50px #00fff7, 0 0 80px #00fff7; }
-    }
-
-    /* Subtitle */
-    p {
-      font-size: 1.3em;
-      color: #e0f7ff;
-      margin-top: 15px;
-      z-index: 1;
-      text-shadow: 0 0 10px #000;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyYou - Fan Platform</title>
+    <style>
+        body {margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:white;}
+        header {display:flex; justify-content:space-between; align-items:center; padding:20px; background:#111;}
+        header h1 {color:#00afff;}
+        nav a {color:white; text-decoration:none; margin:0 15px; font-weight:bold;}
+        .hero {text-align:center; padding:100px 20px; background:linear-gradient(to bottom, #0d0d0d, #111);}
+        .hero h2 {font-size:48px; color:#00afff;}
+        .hero p {font-size:20px; margin-top:10px; color:#ccc;}
+        .btn {background:#00afff; padding:12px 25px; border:none; border-radius:25px; font-size:18px; color:white; cursor:pointer;}
+        .creators {display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:20px; padding:40px;}
+        .creator {background:#1a1a1a; border-radius:10px; overflow:hidden; text-align:center;}
+        .creator img {width:100%; height:250px; object-fit:cover;}
+        .creator h3 {padding:10px;}
+        footer {text-align:center; padding:30px; background:#111; color:#777;}
+    </style>
 </head>
 <body>
-  <h1>COMING SOON</h1>
-  <p>Something Big is On the Way!</p>
+
+<header>
+    <h1>OnlyYou</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Connect with Your Favorite Creators</h2>
+    <p>Subscribe and enjoy exclusive content</p>
+    <button class="btn">Join Now</button>
+</section>
+
+<section class="creators">
+    <div class="creator">
+        <img src="https://via.placeholder.com/400x250" alt="Creator">
+        <h3>Jane Doe</h3>
+    </div>
+    <div class="creator">
+        <img src="https://via.placeholder.com/400x250" alt="Creator">
+        <h3>John Smith</h3>
+    </div>
+    <div class="creator">
+        <img src="https://via.placeholder.com/400x250" alt="Creator">
+        <h3>Alice Brown</h3>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 OnlyYou. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
